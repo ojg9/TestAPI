@@ -1,0 +1,8 @@
+##Instructions for starting the mock server and database
+
+1. first, extract all of the files out of the .zip file 
+2. open a terminal and run this command "npm install"
+3. run "npm fund"
+4. finally, start the server by running "node ./auth-mock.js"
+
+The server should start on http://localhost:5001. Ignore the error on the page when opening it. 

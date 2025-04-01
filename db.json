@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1743188853181,
+      "username": "Driver1",
+      "password": "Sam2015!",
+      "accountType": "driver"
+    },
+    {
+      "id": 1743191531466,
+      "username": "Customer1",
+      "password": "Sam2015!",
+      "accountType": "customer"
+    },
+    {
+      "id": 1743196944172,
+      "username": "TheMaster",
+      "password": "Sam2015!",
+      "accountType": "driver"
+    },
+    {
+      "id": 1743203460144,
+      "username": "TestUser",
+      "password": "Sam2015!",
+      "accountType": "customer"
+    }
+  ],
+  "proposals": [
+    {
+      "id": 1,
+      "geometry": {
+        "coordinates": [47.3769, 8.5417]
+      },
+      "properties": {
+        "description": "Move from Zurich to Bern",
+        "customer": "Customer1"
+      }
+    },
+    {
+      "id": 2,
+      "geometry": {
+        "coordinates": [47.3780, 8.5400]
+      },
+      "properties": {
+        "description": "Move from Zurich to Geneva",
+        "customer": "Customer1"
+      }
+    },
+    {
+      "id": 3,
+      "geometry": {
+        "coordinates": [46.9481, 7.4474]
+      },
+      "properties": {
+        "description": "Move from Bern to Geneva",
+        "customer": "Customer1"
+      }
+    }
+  ]
+}
