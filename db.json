@@ -23,13 +23,38 @@
       "username": "TestUser",
       "password": "Sam2015!",
       "accountType": "customer"
+    },
+    {
+      "id": 1743627291870,
+      "firstName": "Julian",
+      "lastName": "Bambauer",
+      "birthdate": "2025-03-31T22:00:00.000Z",
+      "email": "julian.bambauer@bluewin.ch",
+      "phone": "+41793134501",
+      "username": "JulianR",
+      "password": "Sam2015!",
+      "accountType": "customer"
+    },
+    {
+      "id": 1743628766975,
+      "firstName": "Julian",
+      "lastName": "Bambauer",
+      "birthdate": "2025-03-31T22:00:00.000Z",
+      "email": "julian.bambauer@bluewin.de",
+      "phone": "+41793134502",
+      "username": "JulianD",
+      "password": "Sam2015!",
+      "accountType": "driver"
     }
   ],
   "proposals": [
     {
       "id": 1,
       "geometry": {
-        "coordinates": [47.3769, 8.5417]
+        "coordinates": [
+          47.3769,
+          8.5417
+        ]
       },
       "properties": {
         "description": "Move from Zurich to Bern",
@@ -39,7 +64,10 @@
     {
       "id": 2,
       "geometry": {
-        "coordinates": [47.3780, 8.5400]
+        "coordinates": [
+          47.378,
+          8.54
+        ]
       },
       "properties": {
         "description": "Move from Zurich to Geneva",
@@ -49,7 +77,10 @@
     {
       "id": 3,
       "geometry": {
-        "coordinates": [46.9481, 7.4474]
+        "coordinates": [
+          46.9481,
+          7.4474
+        ]
       },
       "properties": {
         "description": "Move from Bern to Geneva",

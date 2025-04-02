@@ -9,7 +9,7 @@ const app = express();
 const PORT = 5001;
 const SECRET = "secret123";
 
-const tokenTiming = 1;
+const tokenTiming = 100;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -27,14 +27,33 @@ function writeDB(data) {
 
 // Register
 app.post("/api/v1/auth/register", (req, res) => {
-  const { username, password, accountType } = req.body;
+  const {
+    firstName,
+    lastName,
+    birthdate,
+    email,
+    phone,
+    username,
+    password,
+    accountType,
+  } = req.body;
   console.log(req.body);
   const db = readDB();
 
   const userExists = db.users.find((u) => u.username === username);
   if (userExists) return res.status(409).json({ message: "User exists" });
 
-  const user = { id: Date.now(), username, password, accountType };
+  const user = {
+    id: Date.now(),
+    firstName,
+    lastName,
+    birthdate,
+    email,
+    phone,
+    username,
+    password,
+    accountType,
+  };
   db.users.push(user);
   writeDB(db);
 
@@ -110,9 +129,7 @@ app.get("/api/v1/users/:id", (req, res) => {
 
   setTimeout(() => {
     res.status(200).json({
-      id: user.id,
-      username: user.username,
-      accountType: user.accountType,
+      user,
       token,
     });
   }, 1000);
@@ -124,14 +141,16 @@ app.get("/api/v1/map/contracts", (req, res) => {
 
   console.log("Received request for proposals:", req.query);
 
-  console.log("Database contents:", db)
+  console.log("Database contents:", db);
 
   if (!db.proposals) {
     console.error("Proposals array is missing from database");
-    return res.status(500).json({ message: "Internal server error: No proposals data" });
+    return res
+      .status(500)
+      .json({ message: "Internal server error: No proposals data" });
   }
 
-  console.log("Proposals sent :", db.proposals)
+  console.log("Proposals sent :", db.proposals);
   res.json({ features: db.proposals });
 });
 
