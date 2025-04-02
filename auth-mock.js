@@ -127,6 +127,7 @@ app.get("/api/v1/users/:id", (req, res) => {
     expiresIn: `${tokenTiming}m`,
   });
 
+  
   setTimeout(() => {
     res.status(200).json({
       user,
