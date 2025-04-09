@@ -127,7 +127,6 @@ app.get("/api/v1/users/:id", (req, res) => {
     expiresIn: `${tokenTiming}m`,
   });
 
-  
   setTimeout(() => {
     res.status(200).json({
       user,
@@ -136,23 +135,79 @@ app.get("/api/v1/users/:id", (req, res) => {
   }, 1000);
 });
 
-// Get proposals based on location
-app.get("/api/v1/map/contracts", (req, res) => {
+// Get contracts for a specific user with optional status filtering
+app.get("/api/v1/users/:id/contracts", (req, res) => {
   const db = readDB();
-
-  console.log("Received request for proposals:", req.query);
-
-  console.log("Database contents:", db);
+  const { status } = req.query;
+  const userId = parseInt(req.params.id);
 
   if (!db.proposals) {
-    console.error("Proposals array is missing from database");
-    return res
-      .status(500)
-      .json({ message: "Internal server error: No proposals data" });
+    return res.status(500).json({ message: "Proposals data missing" });
   }
 
-  console.log("Proposals sent :", db.proposals);
-  res.json({ features: db.proposals });
+  let results = db.proposals.filter((p) => p.requesterId === userId);
+
+  if (status) {
+    results = results.filter((p) => p.contractStatus === status.toUpperCase());
+  }
+
+  res.json(results);
+});
+
+// Get single contract by ID
+app.get("/api/v1/contracts/:id", (req, res) => {
+  const db = readDB();
+  const contractId = parseInt(req.params.id);
+
+  const contract = db.proposals?.find((p) => p.contractId === contractId);
+
+  if (!contract) {
+    return res.status(404).json({ message: "Contract not found" });
+  }
+
+  res.json(contract);
+});
+
+// Update single contract by ID
+app.put("/api/v1/contracts/:id", (req, res) => {
+  const db = readDB();
+  const contractId = parseInt(req.params.id);
+  const index = db.proposals?.findIndex((p) => p.contractId === contractId);
+
+  if (index === -1 || index === undefined) {
+    return res.status(404).json({ message: "Contract not found" });
+  }
+
+  const contract = req.body;
+
+  db.proposals[index] = {
+    ...db.proposals[index],
+    ...contract,
+    contractId: contractId,
+  };
+
+  writeDB(db);
+
+  res.json({ message: "Contract updated", contract: db.proposals[index] });
+});
+
+// Create new contract
+app.post("/api/v1/contracts", (req, res) => {
+  const db = readDB();
+  const newContract = {
+    ...req.body,
+    contractId: Date.now(),
+    creationDateTime: new Date().toISOString(),
+  };
+
+  if (!db.proposals) {
+    db.proposals = [];
+  }
+
+  db.proposals.push(newContract);
+  writeDB(db);
+
+  res.status(201).json({ message: "Contract created", contract: newContract });
 });
 
 app.listen(PORT, () => {

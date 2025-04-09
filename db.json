@@ -49,43 +49,143 @@
   ],
   "proposals": [
     {
-      "id": 1,
-      "geometry": {
-        "coordinates": [
-          47.3769,
-          8.5417
-        ]
+      "contractId": 135,
+      "title": "Transporting a treadmill",
+      "price": 170,
+      "length": 200,
+      "width": 150,
+      "height": 50,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 2,
+      "contractDescription": "Transporting a treadmill",
+      "moveDateTime": "2024-05-20T11:00:00",
+      "contractStatus": "ACCEPTED",
+      "creationDateTime": "2024-04-12T12:00:00",
+      "requesterId": 1743627291870,
+      "fromLocation": {
+        "city": "Zurich",
+        "post": 8888,
+        "street": "Maisenstrasse 15",
+        "latitude": 47.3769,
+        "longitude": 8.5417
       },
-      "properties": {
-        "description": "Move from Zurich to Bern",
-        "customer": "Customer1"
+      "toLocation": {
+        "city": "Genf",
+        "post": 1111,
+        "street": "Bierstrasse 1",
+        "latitude": 46.5197,
+        "longitude": 6.6323
       }
     },
     {
-      "id": 2,
-      "geometry": {
-        "coordinates": [
-          47.378,
-          8.54
-        ]
+      "title": "Cheesburger",
+      "contractDescription": "heheeh",
+      "moveDateTime": "2025-04-24T06:08:08.000Z",
+      "fromLocation": {
+        "address": "Baselino",
+        "latitude": 0,
+        "longitude": 0
       },
-      "properties": {
-        "description": "Move from Zurich to Geneva",
-        "customer": "Customer1"
-      }
+      "toLocation": {
+        "address": "Bern",
+        "latitude": 0,
+        "longitude": 0
+      },
+      "length": 44,
+      "width": 55,
+      "height": 66,
+      "fragile": false,
+      "coolingRequired": true,
+      "rideAlong": false,
+      "manPower": null,
+      "price": 234,
+      "contractStatus": "REQUESTED",
+      "requesterId": 1743627291870,
+      "contractId": 1744198403485,
+      "creationDateTime": "2025-04-09T11:33:23.485Z"
     },
     {
-      "id": 3,
-      "geometry": {
-        "coordinates": [
-          46.9481,
-          7.4474
-        ]
+      "title": "dadada",
+      "contractDescription": "dasda",
+      "moveDateTime": "2025-04-16T22:00:00.000Z",
+      "fromLocation": {
+        "latitude": 47.2367668,
+        "longitude": 8.9951248,
+        "address": "Häberlibodenstrasse, 8725 Ernetschwil, Schweiz"
       },
-      "properties": {
-        "description": "Move from Bern to Geneva",
-        "customer": "Customer1"
-      }
+      "toLocation": {
+        "latitude": 47.2420978,
+        "longitude": 8.8201851,
+        "address": "Sonnenblickstrasse 1, 8645 Rapperswil-Jona, Schweiz"
+      },
+      "length": 334,
+      "width": 33,
+      "height": 33,
+      "fragile": false,
+      "coolingRequired": true,
+      "rideAlong": false,
+      "manPower": null,
+      "price": 333,
+      "contractStatus": "OFFERED",
+      "requesterId": 1743627291870,
+      "contractId": 1744206427369,
+      "creationDateTime": "2025-04-09T13:47:07.369Z"
+    },
+    {
+      "title": "das",
+      "contractDescription": "das",
+      "moveDateTime": "2025-04-29T22:00:00.000Z",
+      "fromLocation": {
+        "latitude": 47.2015666,
+        "longitude": 8.797533399999999,
+        "address": "Churerstrasse 158, 8808 Pfäffikon, Schweiz"
+      },
+      "toLocation": {
+        "latitude": 47.5156593,
+        "longitude": 8.758602000000002,
+        "address": "Sonnenblickstrasse, 8404 Stadel, Schweiz"
+      },
+      "length": 44,
+      "width": 4433,
+      "height": 443,
+      "fragile": false,
+      "coolingRequired": true,
+      "rideAlong": false,
+      "manPower": null,
+      "price": 7665,
+      "contractStatus": "REQUESTED",
+      "requesterId": 1743627291870,
+      "contractId": 1744207884416,
+      "creationDateTime": "2025-04-09T14:11:24.416Z"
+    },
+    {
+      "title": "Fina",
+      "contractDescription": "Move \"it\" somewhere!",
+      "moveDateTime": "2025-04-17T22:14:00.000Z",
+      "fromLocation": {
+        "latitude": 47.2448834,
+        "longitude": 8.8215766,
+        "address": "Spitzenwiesstrasse 58, 8645 Jona SG, Schweiz"
+      },
+      "toLocation": {
+        "latitude": 47.384248,
+        "longitude": 8.557441899999999,
+        "address": "Schlösslistrasse 20, 8044 Zürich, Schweiz"
+      },
+      "length": 100,
+      "width": 200,
+      "height": 300,
+      "fragile": false,
+      "coolingRequired": true,
+      "rideAlong": true,
+      "manPower": null,
+      "price": 2,
+      "contractStatus": "REQUESTED",
+      "requesterId": 1743627291870,
+      "contractId": 1744217568628,
+      "creationDateTime": "2025-04-09T16:52:48.628Z"
     }
   ]
 }
