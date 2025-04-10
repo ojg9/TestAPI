@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 function readDB() {
   if (!fs.existsSync(dbPath)) {
-    fs.writeFileSync(dbPath, JSON.stringify({ users: [] }, null, 2));
+    fs.writeFileSync(dbPath, JSON.stringify({ users: [], contracts: [] }, null, 2));
   }
   return JSON.parse(fs.readFileSync(dbPath));
 }
@@ -138,6 +138,7 @@ app.get("/api/v1/users/:id", (req, res) => {
 // Get contracts for a specific user with optional status filtering
 app.get("/api/v1/users/:id/contracts", (req, res) => {
   const db = readDB();
+<<<<<<< Updated upstream
   const { status } = req.query;
   const userId = parseInt(req.params.id);
 
@@ -208,6 +209,73 @@ app.post("/api/v1/contracts", (req, res) => {
   writeDB(db);
 
   res.status(201).json({ message: "Contract created", contract: newContract });
+=======
+  const { lat, lng, filters } = req.query;
+
+  // Convert `lat` and `lng` from strings to numbers
+  const latitude = parseFloat(lat);
+  const longitude = parseFloat(lng);
+
+  let contracts = db.contracts || [];
+
+  if (filters) {
+    const parsedFilters = JSON.parse(filters);
+    contracts = contracts.filter(contract => {
+      let matches = true;
+
+      if (parsedFilters.radius !== undefined) {
+        const R = 6371; // Radius of the Earth in kilometers
+        const dLat = (contract.fromLocation.latitude - latitude) * (Math.PI / 180);
+        const dLng = (contract.fromLocation.longitude - longitude) * (Math.PI / 180);
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(latitude * (Math.PI / 180)) * Math.cos(contract.fromLocation.latitude * (Math.PI / 180)) *
+                  Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distance = R * c; // Distance in kilometers
+        matches = matches && distance <= parsedFilters.radius;
+      }
+
+
+      if (parsedFilters.price !== undefined) {
+        matches = matches && contract.price <= parsedFilters.price;
+      }
+
+      if (parsedFilters.weight !== undefined) {
+        matches = matches && contract.mass <= parsedFilters.weight;
+      }
+      if (parsedFilters.volume !== undefined) {
+        matches = matches && contract.volume <= parsedFilters.volume;
+      }
+      if (parsedFilters.requiredPeople !== undefined) {
+        matches = matches && contract.manPower >= parsedFilters.requiredPeople;
+      }
+      if (parsedFilters.fragile !== undefined) {
+        matches = matches && contract.fragile === parsedFilters.fragile;
+      }
+      if (parsedFilters.coolingRequired !== undefined) {
+        matches = matches && contract.coolingRequired === parsedFilters.coolingRequired;
+      }
+      if (parsedFilters.rideAlong !== undefined) {
+        matches = matches && contract.rideAlong === parsedFilters.rideAlong;
+      }
+      if (parsedFilters.fromAddress !== undefined) {
+        const [fromLat, fromLng] = parsedFilters.fromAddress.split(',');
+        matches = matches && contract.fromLocation.latitude === parseFloat(fromLat) && contract.fromLocation.longitude === parseFloat(fromLng);
+      }
+      if (parsedFilters.toAddress !== undefined) {
+        const [toLat, toLng] = parsedFilters.toAddress.split(',');
+        matches = matches && contract.toLocation.latitude === parseFloat(toLat) && contract.toLocation.longitude === parseFloat(toLng);
+      }
+      if (parsedFilters.moveDateTime !== undefined) {
+        matches = matches && contract.moveDateTime === parsedFilters.moveDateTime;
+      }
+
+      return matches;
+    });
+  }
+  console.log("Returned contracts:", contracts);
+  res.json({ contracts });
+>>>>>>> Stashed changes
 });
 
 app.listen(PORT, () => {

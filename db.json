@@ -47,14 +47,12 @@
       "accountType": "driver"
     }
   ],
-  "proposals": [
+  "contracts": [
     {
-      "contractId": 135,
+      "contractId": 0,
       "title": "Transporting a treadmill",
       "price": 170,
-      "length": 200,
-      "width": 150,
-      "height": 50,
+      "volume": 200,
       "fragile": false,
       "coolingRequired": false,
       "rideAlong": true,
@@ -93,9 +91,7 @@
         "latitude": 0,
         "longitude": 0
       },
-      "length": 44,
-      "width": 55,
-      "height": 66,
+      "volume": 66,
       "fragile": false,
       "coolingRequired": true,
       "rideAlong": false,
@@ -120,9 +116,7 @@
         "longitude": 8.8201851,
         "address": "Sonnenblickstrasse 1, 8645 Rapperswil-Jona, Schweiz"
       },
-      "length": 334,
-      "width": 33,
-      "height": 33,
+      "volume": 334,
       "fragile": false,
       "coolingRequired": true,
       "rideAlong": false,
@@ -147,9 +141,7 @@
         "longitude": 8.758602000000002,
         "address": "Sonnenblickstrasse, 8404 Stadel, Schweiz"
       },
-      "length": 44,
-      "width": 4433,
-      "height": 443,
+      "volume": 4433,
       "fragile": false,
       "coolingRequired": true,
       "rideAlong": false,
@@ -174,9 +166,7 @@
         "longitude": 8.557441899999999,
         "address": "Schlösslistrasse 20, 8044 Zürich, Schweiz"
       },
-      "length": 100,
-      "width": 200,
-      "height": 300,
+      "volume": 300,
       "fragile": false,
       "coolingRequired": true,
       "rideAlong": true,
