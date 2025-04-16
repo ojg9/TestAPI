@@ -138,7 +138,6 @@ app.get("/api/v1/users/:id", (req, res) => {
 // Get contracts for a specific user with optional status filtering
 app.get("/api/v1/users/:id/contracts", (req, res) => {
   const db = readDB();
-<<<<<<< Updated upstream
   const { status } = req.query;
   const userId = parseInt(req.params.id);
 
@@ -209,7 +208,6 @@ app.post("/api/v1/contracts", (req, res) => {
   writeDB(db);
 
   res.status(201).json({ message: "Contract created", contract: newContract });
-=======
   const { lat, lng, filters } = req.query;
 
   // Convert `lat` and `lng` from strings to numbers
@@ -275,7 +273,6 @@ app.post("/api/v1/contracts", (req, res) => {
   }
   console.log("Returned contracts:", contracts);
   res.json({ contracts });
->>>>>>> Stashed changes
 });
 
 app.listen(PORT, () => {
