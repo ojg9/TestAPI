@@ -10,7 +10,7 @@
       "id": 1743191531466,
       "username": "Customer1",
       "password": "Sam2015!",
-      "accountType": "customer"
+      "accountType": "requester"
     },
     {
       "id": 1743196944172,
@@ -22,7 +22,7 @@
       "id": 1743203460144,
       "username": "TestUser",
       "password": "Sam2015!",
-      "accountType": "customer"
+      "accountType": "requester"
     },
     {
       "id": 1743627291870,
@@ -33,7 +33,7 @@
       "phone": "+41793134501",
       "username": "JulianR",
       "password": "Sam2015!",
-      "accountType": "customer"
+      "accountType": "requester"
     },
     {
       "id": 1743628766975,
@@ -49,133 +49,585 @@
   ],
   "contracts": [
     {
-      "contractId": 0,
-      "title": "Transporting a treadmill",
-      "price": 170,
-      "volume": 200,
+      "contractId": 1,
+      "title": "Moving office chairs",
+      "price": 120,
+      "volume": 150,
       "fragile": false,
       "coolingRequired": false,
-      "rideAlong": true,
-      "manPower": 2,
-      "contractDescription": "Transporting a treadmill",
-      "moveDateTime": "2024-05-20T11:00:00",
-      "contractStatus": "ACCEPTED",
-      "creationDateTime": "2024-04-12T12:00:00",
-      "requesterId": 1743627291870,
+      "rideAlong": false,
+      "manPower": 1,
+      "contractDescription": "Move 5 office chairs from Zurich to Winterthur.",
+      "moveDateTime": "2024-05-21T09:00:00",
+      "contractStatus": "REQUESTED",
+      "creationDateTime": "2024-04-13T14:00:00",
+      "requesterId": 1743627291871,
       "fromLocation": {
         "city": "Zurich",
-        "post": 8888,
-        "street": "Maisenstrasse 15",
-        "latitude": 47.3769,
-        "longitude": 8.5417
+        "post": 8001,
+        "street": "Bahnhofstrasse 10",
+        "latitude": 47.3753,
+        "longitude": 8.5384
       },
       "toLocation": {
-        "city": "Genf",
-        "post": 1111,
-        "street": "Bierstrasse 1",
-        "latitude": 46.5197,
-        "longitude": 6.6323
+        "city": "Winterthur",
+        "post": 8400,
+        "street": "Marktgasse 25",
+        "latitude": 47.4988,
+        "longitude": 8.7237
       }
     },
     {
-      "title": "Cheesburger",
-      "contractDescription": "heheeh",
-      "moveDateTime": "2025-04-24T06:08:08.000Z",
-      "fromLocation": {
-        "address": "Baselino",
-        "latitude": 0,
-        "longitude": 0
-      },
-      "toLocation": {
-        "address": "Bern",
-        "latitude": 0,
-        "longitude": 0
-      },
-      "volume": 66,
-      "fragile": false,
-      "coolingRequired": true,
-      "rideAlong": false,
-      "manPower": null,
-      "price": 234,
-      "contractStatus": "REQUESTED",
-      "requesterId": 1743627291870,
-      "contractId": 1744198403485,
-      "creationDateTime": "2025-04-09T11:33:23.485Z"
-    },
-    {
-      "title": "dadada",
-      "contractDescription": "dasda",
-      "moveDateTime": "2025-04-16T22:00:00.000Z",
-      "fromLocation": {
-        "latitude": 47.2367668,
-        "longitude": 8.9951248,
-        "address": "Häberlibodenstrasse, 8725 Ernetschwil, Schweiz"
-      },
-      "toLocation": {
-        "latitude": 47.2420978,
-        "longitude": 8.8201851,
-        "address": "Sonnenblickstrasse 1, 8645 Rapperswil-Jona, Schweiz"
-      },
-      "volume": 334,
-      "fragile": false,
-      "coolingRequired": true,
-      "rideAlong": false,
-      "manPower": null,
-      "price": 333,
-      "contractStatus": "OFFERED",
-      "requesterId": 1743627291870,
-      "contractId": 1744206427369,
-      "creationDateTime": "2025-04-09T13:47:07.369Z"
-    },
-    {
-      "title": "das",
-      "contractDescription": "das",
-      "moveDateTime": "2025-04-29T22:00:00.000Z",
-      "fromLocation": {
-        "latitude": 47.2015666,
-        "longitude": 8.797533399999999,
-        "address": "Churerstrasse 158, 8808 Pfäffikon, Schweiz"
-      },
-      "toLocation": {
-        "latitude": 47.5156593,
-        "longitude": 8.758602000000002,
-        "address": "Sonnenblickstrasse, 8404 Stadel, Schweiz"
-      },
-      "volume": 4433,
-      "fragile": false,
-      "coolingRequired": true,
-      "rideAlong": false,
-      "manPower": null,
-      "price": 7665,
-      "contractStatus": "REQUESTED",
-      "requesterId": 1743627291870,
-      "contractId": 1744207884416,
-      "creationDateTime": "2025-04-09T14:11:24.416Z"
-    },
-    {
-      "title": "Fina",
-      "contractDescription": "Move \"it\" somewhere!",
-      "moveDateTime": "2025-04-17T22:14:00.000Z",
-      "fromLocation": {
-        "latitude": 47.2448834,
-        "longitude": 8.8215766,
-        "address": "Spitzenwiesstrasse 58, 8645 Jona SG, Schweiz"
-      },
-      "toLocation": {
-        "latitude": 47.384248,
-        "longitude": 8.557441899999999,
-        "address": "Schlösslistrasse 20, 8044 Zürich, Schweiz"
-      },
+      "contractId": 2,
+      "title": "Fridge delivery",
+      "price": 200,
       "volume": 300,
-      "fragile": false,
+      "fragile": true,
       "coolingRequired": true,
-      "rideAlong": true,
-      "manPower": null,
-      "price": 2,
+      "rideAlong": false,
+      "manPower": 2,
+      "contractDescription": "Transport of a large fridge to Lausanne.",
+      "moveDateTime": "2024-05-23T10:30:00",
       "contractStatus": "REQUESTED",
-      "requesterId": 1743627291870,
-      "contractId": 1744217568628,
-      "creationDateTime": "2025-04-09T16:52:48.628Z"
-    }
+      "creationDateTime": "2024-04-14T09:45:00",
+      "requesterId": 1743627291872,
+      "fromLocation": {
+        "city": "Basel",
+        "post": 4001,
+        "street": "Claraplatz 5",
+        "latitude": 47.5584,
+        "longitude": 7.5733
+      },
+      "toLocation": {
+        "city": "Lausanne",
+        "post": 1003,
+        "street": "Rue Centrale 8",
+        "latitude": 46.5197,
+        "longitude": 6.6336
+      }
+    },
+    {
+      "contractId": 3,
+      "title": "Bookshelf relocation",
+      "price": 90,
+      "volume": 80,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 1,
+      "contractDescription": "Moving a wooden bookshelf to new apartment.",
+      "moveDateTime": "2024-05-25T15:00:00",
+      "contractStatus": "OFFERED",
+      "creationDateTime": "2024-04-15T11:00:00",
+      "requesterId": 1743627291873,
+      "fromLocation": {
+        "city": "Bern",
+        "post": 3011,
+        "street": "Kramgasse 18",
+        "latitude": 46.9481,
+        "longitude": 7.4474
+      },
+      "toLocation": {
+        "city": "Thun",
+        "post": 3600,
+        "street": "Hofstettenstrasse 7",
+        "latitude": 46.7512,
+        "longitude": 7.6217
+      }
+    },
+    {
+      "contractId": 4,
+      "title": "Student move",
+      "price": 300,
+      "volume": 350,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 2,
+      "contractDescription": "Moving personal belongings and electronics.",
+      "moveDateTime": "2024-06-01T08:00:00",
+      "contractStatus": "OFFERED",
+      "creationDateTime": "2024-04-12T17:30:00",
+      "requesterId": 1743627291874,
+      "fromLocation": {
+        "city": "St. Gallen",
+        "post": 9000,
+        "street": "Neugasse 14",
+        "latitude": 47.4245,
+        "longitude": 9.3767
+      },
+      "toLocation": {
+        "city": "Luzern",
+        "post": 6003,
+        "street": "Hertensteinstrasse 12",
+        "latitude": 47.0502,
+        "longitude": 8.3093
+      }
+    },
+    {
+      "contractId": 5,
+      "title": "Wine cabinet transport",
+      "price": 250,
+      "volume": 180,
+      "fragile": true,
+      "coolingRequired": true,
+      "rideAlong": false,
+      "manPower": 2,
+      "contractDescription": "Transport of a temperature-controlled wine cabinet.",
+      "moveDateTime": "2024-05-22T13:00:00",
+      "contractStatus": "ACCEPTED",
+      "creationDateTime": "2024-04-10T13:00:00",
+      "requesterId": 1743627291875,
+      "fromLocation": {
+        "city": "Lugano",
+        "post": 6900,
+        "street": "Via Nassa 7",
+        "latitude": 46.0058,
+        "longitude": 8.9511
+      },
+      "toLocation": {
+        "city": "Zug",
+        "post": 6300,
+        "street": "Bundesstrasse 2",
+        "latitude": 47.1662,
+        "longitude": 8.5155
+      }
+    },
+    {
+      "contractId": 6,
+      "title": "Moving antique furniture",
+      "price": 400,
+      "volume": 400,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 3,
+      "contractDescription": "Careful transport of antique wooden items.",
+      "moveDateTime": "2024-06-05T09:00:00",
+      "contractStatus": "ACCEPTED",
+      "creationDateTime": "2024-04-11T10:00:00",
+      "requesterId": 1743627291876,
+      "fromLocation": {
+        "city": "Neuchâtel",
+        "post": 2000,
+        "street": "Rue de l’Hôpital 3",
+        "latitude": 46.991,
+        "longitude": 6.9293
+      },
+      "toLocation": {
+        "city": "Fribourg",
+        "post": 1700,
+        "street": "Avenue de la Gare 5",
+        "latitude": 46.8011,
+        "longitude": 7.151
+      }
+    },
+    {
+      "contractId": 7,
+      "title": "Transporting plants",
+      "price": 130,
+      "volume": 100,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 1,
+      "contractDescription": "Indoor plants need to be moved with care.",
+      "moveDateTime": "2024-05-27T14:00:00",
+      "contractStatus": "COMPLETED",
+      "creationDateTime": "2024-04-16T15:45:00",
+      "requesterId": 1743627291877,
+      "fromLocation": {
+        "city": "Chur",
+        "post": 7000,
+        "street": "Poststrasse 22",
+        "latitude": 46.8508,
+        "longitude": 9.5329
+      },
+      "toLocation": {
+        "city": "Davos",
+        "post": 7270,
+        "street": "Promenade 45",
+        "latitude": 46.8023,
+        "longitude": 9.8364
+      }
+    },
+    {
+      "contractId": 8,
+      "title": "Piano relocation",
+      "price": 500,
+      "volume": 500,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 4,
+      "contractDescription": "Heavy upright piano needs special care.",
+      "moveDateTime": "2024-06-10T11:00:00",
+      "contractStatus": "COMPLETED",
+      "creationDateTime": "2024-04-10T16:00:00",
+      "requesterId": 1743627291878,
+      "fromLocation": {
+        "city": "Schaffhausen",
+        "post": 8200,
+        "street": "Vordergasse 55",
+        "latitude": 47.6966,
+        "longitude": 8.635
+      },
+      "toLocation": {
+        "city": "Zürich",
+        "post": 8050,
+        "street": "Leutschenbachstrasse 95",
+        "latitude": 47.4141,
+        "longitude": 8.5566
+      }
+    },
+    {
+      "contractId": 9,
+      "title": "Transporting electronics",
+      "price": 160,
+      "volume": 120,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 2,
+      "contractDescription": "Several computers and screens to be moved.",
+      "moveDateTime": "2024-06-03T10:00:00",
+      "contractStatus": "FINALIZED",
+      "creationDateTime": "2024-04-13T11:30:00",
+      "requesterId": 1743627291879,
+      "fromLocation": {
+        "city": "Biel",
+        "post": 2502,
+        "street": "Bahnhofplatz 2",
+        "latitude": 47.1367,
+        "longitude": 7.2468
+      },
+      "toLocation": {
+        "city": "Solothurn",
+        "post": 4500,
+        "street": "Hauptgasse 4",
+        "latitude": 47.2068,
+        "longitude": 7.5371
+      }
+    },
+    {
+      "contractId": 10,
+      "title": "Small move for elderly person",
+      "price": 100,
+      "volume": 90,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 1,
+      "contractDescription": "Help moving personal items and clothes.",
+      "moveDateTime": "2024-05-29T09:30:00",
+      "contractStatus": "FINALIZED",
+      "creationDateTime": "2024-04-12T08:15:00",
+      "requesterId": 1743627291880,
+      "fromLocation": {
+        "city": "Aarau",
+        "post": 5000,
+        "street": "Laurenzentorgasse 3",
+        "latitude": 47.3925,
+        "longitude": 8.0455
+      },
+      "toLocation": {
+        "city": "Olten",
+        "post": 4600,
+        "street": "Kirchgasse 7",
+        "latitude": 47.3492,
+        "longitude": 7.9056
+      }
+    },
+      {
+        "contractId": 11,
+        "title": "Moving bike equipment",
+        "price": 110,
+        "volume": 70,
+        "fragile": false,
+        "coolingRequired": false,
+        "rideAlong": false,
+        "manPower": 1,
+        "contractDescription": "Transporting cycling gear and spare tires.",
+        "moveDateTime": "2024-06-02T10:00:00",
+        "contractStatus": "REQUESTED",
+        "creationDateTime": "2024-04-14T09:00:00",
+        "requesterId": 1743627291881,
+        "fromLocation": {
+          "city": "Sion",
+          "post": 1950,
+          "street": "Rue de Lausanne 21",
+          "latitude": 46.2331,
+          "longitude": 7.3606
+        },
+        "toLocation": {
+          "city": "Martigny",
+          "post": 1920,
+          "street": "Place Centrale 4",
+          "latitude": 46.1035,
+          "longitude": 7.0729
+        }
+      },
+      {
+        "contractId": 12,
+        "title": "Mini bar relocation",
+        "price": 150,
+        "volume": 90,
+        "fragile": false,
+        "coolingRequired": true,
+        "rideAlong": false,
+        "manPower": 2,
+        "contractDescription": "Moving a mini bar with drink cooling.",
+        "moveDateTime": "2024-06-03T15:30:00",
+        "contractStatus": "REQUESTED",
+        "creationDateTime": "2024-04-14T10:30:00",
+        "requesterId": 1743627291882,
+        "fromLocation": {
+          "city": "Yverdon-les-Bains",
+          "post": 1400,
+          "street": "Rue du Lac 7",
+          "latitude": 46.7785,
+          "longitude": 6.6416
+        },
+        "toLocation": {
+          "city": "La Chaux-de-Fonds",
+          "post": 2300,
+          "street": "Avenue Léopold-Robert 20",
+          "latitude": 47.0999,
+          "longitude": 6.8259
+        }
+      },
+      {
+        "contractId": 13,
+        "title": "Moving photo studio gear",
+        "price": 350,
+        "volume": 250,
+        "fragile": true,
+        "coolingRequired": false,
+        "rideAlong": true,
+        "manPower": 2,
+        "contractDescription": "Studio lights and backdrops need careful handling.",
+        "moveDateTime": "2024-06-04T14:00:00",
+        "contractStatus": "OFFERED",
+        "creationDateTime": "2024-04-14T11:00:00",
+        "requesterId": 1743627291883,
+        "fromLocation": {
+          "city": "Zürich",
+          "post": 8057,
+          "street": "Rosengartenstrasse 45",
+          "latitude": 47.3997,
+          "longitude": 8.5173
+        },
+        "toLocation": {
+          "city": "Rapperswil",
+          "post": 8640,
+          "street": "Seestrasse 13",
+          "latitude": 47.2264,
+          "longitude": 8.8182
+        }
+      },
+      {
+        "contractId": 14,
+        "title": "Delivery of conference materials",
+        "price": 280,
+        "volume": 180,
+        "fragile": false,
+        "coolingRequired": false,
+        "rideAlong": false,
+        "manPower": 1,
+        "contractDescription": "Boxes with folders, pens and name tags.",
+        "moveDateTime": "2024-06-05T10:00:00",
+        "contractStatus": "OFFERED",
+        "creationDateTime": "2024-04-14T12:15:00",
+        "requesterId": 1743627291884,
+        "fromLocation": {
+          "city": "Baden",
+          "post": 5400,
+          "street": "Haselstrasse 11",
+          "latitude": 47.4724,
+          "longitude": 8.3076
+        },
+        "toLocation": {
+          "city": "Aarau",
+          "post": 5000,
+          "street": "Kasernenstrasse 19",
+          "latitude": 47.3903,
+          "longitude": 8.0452
+        }
+      },
+      {
+        "contractId": 15,
+        "title": "Moving household items",
+        "price": 420,
+        "volume": 380,
+        "fragile": true,
+        "coolingRequired": false,
+        "rideAlong": true,
+        "manPower": 3,
+        "contractDescription": "Beds, lamps, fragile glassware included.",
+        "moveDateTime": "2024-06-06T08:30:00",
+        "contractStatus": "ACCEPTED",
+        "creationDateTime": "2024-04-14T13:20:00",
+        "requesterId": 1743627291885,
+        "fromLocation": {
+          "city": "Uster",
+          "post": 8610,
+          "street": "Brunnenstrasse 8",
+          "latitude": 47.3476,
+          "longitude": 8.7203
+        },
+        "toLocation": {
+          "city": "Wetzikon",
+          "post": 8620,
+          "street": "Gartenstrasse 3",
+          "latitude": 47.3267,
+          "longitude": 8.7922
+        }
+      },
+      {
+        "contractId": 16,
+        "title": "Transporting a washing machine",
+        "price": 170,
+        "volume": 200,
+        "fragile": true,
+        "coolingRequired": false,
+        "rideAlong": false,
+        "manPower": 2,
+        "contractDescription": "Heavy appliance needs loading help.",
+        "moveDateTime": "2024-06-07T13:00:00",
+        "contractStatus": "ACCEPTED",
+        "creationDateTime": "2024-04-14T14:00:00",
+        "requesterId": 1743627291886,
+        "fromLocation": {
+          "city": "Kloten",
+          "post": 8302,
+          "street": "Flughafenstrasse 2",
+          "latitude": 47.4515,
+          "longitude": 8.5617
+        },
+        "toLocation": {
+          "city": "Opfikon",
+          "post": 8152,
+          "street": "Industriestrasse 11",
+          "latitude": 47.4324,
+          "longitude": 8.5709
+        }
+      },
+      {
+        "contractId": 17,
+        "title": "Transport of garden tools",
+        "price": 95,
+        "volume": 100,
+        "fragile": false,
+        "coolingRequired": false,
+        "rideAlong": false,
+        "manPower": 1,
+        "contractDescription": "Shovels, hedge trimmers and a lawnmower.",
+        "moveDateTime": "2024-06-08T11:00:00",
+        "contractStatus": "COMPLETED",
+        "creationDateTime": "2024-04-14T15:00:00",
+        "requesterId": 1743627291887,
+        "fromLocation": {
+          "city": "Langenthal",
+          "post": 4900,
+          "street": "Werkhofstrasse 6",
+          "latitude": 47.2137,
+          "longitude": 7.7904
+        },
+        "toLocation": {
+          "city": "Burgdorf",
+          "post": 3400,
+          "street": "Bahnhofstrasse 8",
+          "latitude": 47.0597,
+          "longitude": 7.6231
+        }
+      },
+      {
+        "contractId": 18,
+        "title": "Moving musical instruments",
+        "price": 260,
+        "volume": 210,
+        "fragile": true,
+        "coolingRequired": false,
+        "rideAlong": true,
+        "manPower": 2,
+        "contractDescription": "Guitars, keyboard and speakers included.",
+        "moveDateTime": "2024-06-09T09:30:00",
+        "contractStatus": "COMPLETED",
+        "creationDateTime": "2024-04-14T15:30:00",
+        "requesterId": 1743627291888,
+        "fromLocation": {
+          "city": "Bulle",
+          "post": 1630,
+          "street": "Rue de la Gare 12",
+          "latitude": 46.6161,
+          "longitude": 7.0535
+        },
+        "toLocation": {
+          "city": "Vevey",
+          "post": 1800,
+          "street": "Avenue Nestlé 5",
+          "latitude": 46.4644,
+          "longitude": 6.8431
+        }
+      },
+      {
+        "contractId": 19,
+        "title": "Art delivery for exhibition",
+        "price": 600,
+        "volume": 220,
+        "fragile": true,
+        "coolingRequired": false,
+        "rideAlong": true,
+        "manPower": 2,
+        "contractDescription": "Paintings and sculptures, handle with care.",
+        "moveDateTime": "2024-06-10T10:00:00",
+        "contractStatus": "FINALIZED",
+        "creationDateTime": "2024-04-14T16:00:00",
+        "requesterId": 1743627291889,
+        "fromLocation": {
+          "city": "Lugano",
+          "post": 6900,
+          "street": "Via Cattedrale 9",
+          "latitude": 46.0056,
+          "longitude": 8.9542
+        },
+        "toLocation": {
+          "city": "Locarno",
+          "post": 6600,
+          "street": "Via della Stazione 3",
+          "latitude": 46.1706,
+          "longitude": 8.7995
+        }
+      },
+      {
+        "contractId": 20,
+        "title": "Old furniture to recycling center",
+        "price": 75,
+        "volume": 140,
+        "fragile": false,
+        "coolingRequired": false,
+        "rideAlong": false,
+        "manPower": 1,
+        "contractDescription": "Transporting an old sofa and broken shelves.",
+        "moveDateTime": "2024-06-11T13:00:00",
+        "contractStatus": "FINALIZED",
+        "creationDateTime": "2024-04-14T16:30:00",
+        "requesterId": 1743627291890,
+        "fromLocation": {
+          "city": "Dietikon",
+          "post": 8953,
+          "street": "Schönenwerdstrasse 10",
+          "latitude": 47.4079,
+          "longitude": 8.4006
+        },
+        "toLocation": {
+          "city": "Zürich",
+          "post": 8048,
+          "street": "Rautistrasse 33",
+          "latitude": 47.3829,
+          "longitude": 8.4866
+        }
+      }
+    
   ]
 }
