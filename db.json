@@ -47,35 +47,34 @@
       "accountType": "driver"
     }
   ],
-  "contracts": [
+  "proposals": [
     {
       "contractId": 1,
       "title": "Moving office chairs",
       "price": 120,
-      "volume": 150,
+      "volume": null,
       "fragile": false,
       "coolingRequired": false,
       "rideAlong": false,
       "manPower": 1,
       "contractDescription": "Move 5 office chairs from Zurich to Winterthur.",
-      "moveDateTime": "2024-05-21T09:00:00",
+      "moveDateTime": "2024-05-21T07:00:00.000Z",
       "contractStatus": "REQUESTED",
       "creationDateTime": "2024-04-13T14:00:00",
-      "requesterId": 1743627291871,
+      "requesterId": 1743191531466,
       "fromLocation": {
-        "city": "Zurich",
-        "post": 8001,
-        "street": "Bahnhofstrasse 10",
-        "latitude": 47.3753,
-        "longitude": 8.5384
+        "latitude": 47.3768866,
+        "longitude": 8.541694,
+        "address": "Zürich, Schweiz"
       },
       "toLocation": {
-        "city": "Winterthur",
-        "post": 8400,
-        "street": "Marktgasse 25",
         "latitude": 47.4988,
         "longitude": 8.7237
-      }
+      },
+      "length": null,
+      "width": null,
+      "height": null,
+      "mass": null
     },
     {
       "contractId": 2,
@@ -90,7 +89,7 @@
       "moveDateTime": "2024-05-23T10:30:00",
       "contractStatus": "REQUESTED",
       "creationDateTime": "2024-04-14T09:45:00",
-      "requesterId": 1743627291872,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Basel",
         "post": 4001,
@@ -119,7 +118,7 @@
       "moveDateTime": "2024-05-25T15:00:00",
       "contractStatus": "OFFERED",
       "creationDateTime": "2024-04-15T11:00:00",
-      "requesterId": 1743627291873,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Bern",
         "post": 3011,
@@ -148,7 +147,7 @@
       "moveDateTime": "2024-06-01T08:00:00",
       "contractStatus": "OFFERED",
       "creationDateTime": "2024-04-12T17:30:00",
-      "requesterId": 1743627291874,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "St. Gallen",
         "post": 9000,
@@ -177,7 +176,7 @@
       "moveDateTime": "2024-05-22T13:00:00",
       "contractStatus": "ACCEPTED",
       "creationDateTime": "2024-04-10T13:00:00",
-      "requesterId": 1743627291875,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Lugano",
         "post": 6900,
@@ -206,7 +205,7 @@
       "moveDateTime": "2024-06-05T09:00:00",
       "contractStatus": "ACCEPTED",
       "creationDateTime": "2024-04-11T10:00:00",
-      "requesterId": 1743627291876,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Neuchâtel",
         "post": 2000,
@@ -235,7 +234,7 @@
       "moveDateTime": "2024-05-27T14:00:00",
       "contractStatus": "COMPLETED",
       "creationDateTime": "2024-04-16T15:45:00",
-      "requesterId": 1743627291877,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Chur",
         "post": 7000,
@@ -264,7 +263,7 @@
       "moveDateTime": "2024-06-10T11:00:00",
       "contractStatus": "COMPLETED",
       "creationDateTime": "2024-04-10T16:00:00",
-      "requesterId": 1743627291878,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Schaffhausen",
         "post": 8200,
@@ -293,7 +292,7 @@
       "moveDateTime": "2024-06-03T10:00:00",
       "contractStatus": "FINALIZED",
       "creationDateTime": "2024-04-13T11:30:00",
-      "requesterId": 1743627291879,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Biel",
         "post": 2502,
@@ -322,7 +321,7 @@
       "moveDateTime": "2024-05-29T09:30:00",
       "contractStatus": "FINALIZED",
       "creationDateTime": "2024-04-12T08:15:00",
-      "requesterId": 1743627291880,
+      "requesterId": 1743191531466,
       "fromLocation": {
         "city": "Aarau",
         "post": 5000,
@@ -338,296 +337,617 @@
         "longitude": 7.9056
       }
     },
-      {
-        "contractId": 11,
-        "title": "Moving bike equipment",
-        "price": 110,
-        "volume": 70,
-        "fragile": false,
-        "coolingRequired": false,
-        "rideAlong": false,
-        "manPower": 1,
-        "contractDescription": "Transporting cycling gear and spare tires.",
-        "moveDateTime": "2024-06-02T10:00:00",
-        "contractStatus": "REQUESTED",
-        "creationDateTime": "2024-04-14T09:00:00",
-        "requesterId": 1743627291881,
-        "fromLocation": {
-          "city": "Sion",
-          "post": 1950,
-          "street": "Rue de Lausanne 21",
-          "latitude": 46.2331,
-          "longitude": 7.3606
-        },
-        "toLocation": {
-          "city": "Martigny",
-          "post": 1920,
-          "street": "Place Centrale 4",
-          "latitude": 46.1035,
-          "longitude": 7.0729
-        }
+    {
+      "contractId": 11,
+      "title": "Moving bike equipment",
+      "price": 110,
+      "volume": 70,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 1,
+      "contractDescription": "Transporting cycling gear and spare tires.",
+      "moveDateTime": "2024-06-02T10:00:00",
+      "contractStatus": "REQUESTED",
+      "creationDateTime": "2024-04-14T09:00:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Sion",
+        "post": 1950,
+        "street": "Rue de Lausanne 21",
+        "latitude": 46.2331,
+        "longitude": 7.3606
       },
-      {
-        "contractId": 12,
-        "title": "Mini bar relocation",
-        "price": 150,
-        "volume": 90,
-        "fragile": false,
-        "coolingRequired": true,
-        "rideAlong": false,
-        "manPower": 2,
-        "contractDescription": "Moving a mini bar with drink cooling.",
-        "moveDateTime": "2024-06-03T15:30:00",
-        "contractStatus": "REQUESTED",
-        "creationDateTime": "2024-04-14T10:30:00",
-        "requesterId": 1743627291882,
-        "fromLocation": {
-          "city": "Yverdon-les-Bains",
-          "post": 1400,
-          "street": "Rue du Lac 7",
-          "latitude": 46.7785,
-          "longitude": 6.6416
-        },
-        "toLocation": {
-          "city": "La Chaux-de-Fonds",
-          "post": 2300,
-          "street": "Avenue Léopold-Robert 20",
-          "latitude": 47.0999,
-          "longitude": 6.8259
-        }
-      },
-      {
-        "contractId": 13,
-        "title": "Moving photo studio gear",
-        "price": 350,
-        "volume": 250,
-        "fragile": true,
-        "coolingRequired": false,
-        "rideAlong": true,
-        "manPower": 2,
-        "contractDescription": "Studio lights and backdrops need careful handling.",
-        "moveDateTime": "2024-06-04T14:00:00",
-        "contractStatus": "OFFERED",
-        "creationDateTime": "2024-04-14T11:00:00",
-        "requesterId": 1743627291883,
-        "fromLocation": {
-          "city": "Zürich",
-          "post": 8057,
-          "street": "Rosengartenstrasse 45",
-          "latitude": 47.3997,
-          "longitude": 8.5173
-        },
-        "toLocation": {
-          "city": "Rapperswil",
-          "post": 8640,
-          "street": "Seestrasse 13",
-          "latitude": 47.2264,
-          "longitude": 8.8182
-        }
-      },
-      {
-        "contractId": 14,
-        "title": "Delivery of conference materials",
-        "price": 280,
-        "volume": 180,
-        "fragile": false,
-        "coolingRequired": false,
-        "rideAlong": false,
-        "manPower": 1,
-        "contractDescription": "Boxes with folders, pens and name tags.",
-        "moveDateTime": "2024-06-05T10:00:00",
-        "contractStatus": "OFFERED",
-        "creationDateTime": "2024-04-14T12:15:00",
-        "requesterId": 1743627291884,
-        "fromLocation": {
-          "city": "Baden",
-          "post": 5400,
-          "street": "Haselstrasse 11",
-          "latitude": 47.4724,
-          "longitude": 8.3076
-        },
-        "toLocation": {
-          "city": "Aarau",
-          "post": 5000,
-          "street": "Kasernenstrasse 19",
-          "latitude": 47.3903,
-          "longitude": 8.0452
-        }
-      },
-      {
-        "contractId": 15,
-        "title": "Moving household items",
-        "price": 420,
-        "volume": 380,
-        "fragile": true,
-        "coolingRequired": false,
-        "rideAlong": true,
-        "manPower": 3,
-        "contractDescription": "Beds, lamps, fragile glassware included.",
-        "moveDateTime": "2024-06-06T08:30:00",
-        "contractStatus": "ACCEPTED",
-        "creationDateTime": "2024-04-14T13:20:00",
-        "requesterId": 1743627291885,
-        "fromLocation": {
-          "city": "Uster",
-          "post": 8610,
-          "street": "Brunnenstrasse 8",
-          "latitude": 47.3476,
-          "longitude": 8.7203
-        },
-        "toLocation": {
-          "city": "Wetzikon",
-          "post": 8620,
-          "street": "Gartenstrasse 3",
-          "latitude": 47.3267,
-          "longitude": 8.7922
-        }
-      },
-      {
-        "contractId": 16,
-        "title": "Transporting a washing machine",
-        "price": 170,
-        "volume": 200,
-        "fragile": true,
-        "coolingRequired": false,
-        "rideAlong": false,
-        "manPower": 2,
-        "contractDescription": "Heavy appliance needs loading help.",
-        "moveDateTime": "2024-06-07T13:00:00",
-        "contractStatus": "ACCEPTED",
-        "creationDateTime": "2024-04-14T14:00:00",
-        "requesterId": 1743627291886,
-        "fromLocation": {
-          "city": "Kloten",
-          "post": 8302,
-          "street": "Flughafenstrasse 2",
-          "latitude": 47.4515,
-          "longitude": 8.5617
-        },
-        "toLocation": {
-          "city": "Opfikon",
-          "post": 8152,
-          "street": "Industriestrasse 11",
-          "latitude": 47.4324,
-          "longitude": 8.5709
-        }
-      },
-      {
-        "contractId": 17,
-        "title": "Transport of garden tools",
-        "price": 95,
-        "volume": 100,
-        "fragile": false,
-        "coolingRequired": false,
-        "rideAlong": false,
-        "manPower": 1,
-        "contractDescription": "Shovels, hedge trimmers and a lawnmower.",
-        "moveDateTime": "2024-06-08T11:00:00",
-        "contractStatus": "COMPLETED",
-        "creationDateTime": "2024-04-14T15:00:00",
-        "requesterId": 1743627291887,
-        "fromLocation": {
-          "city": "Langenthal",
-          "post": 4900,
-          "street": "Werkhofstrasse 6",
-          "latitude": 47.2137,
-          "longitude": 7.7904
-        },
-        "toLocation": {
-          "city": "Burgdorf",
-          "post": 3400,
-          "street": "Bahnhofstrasse 8",
-          "latitude": 47.0597,
-          "longitude": 7.6231
-        }
-      },
-      {
-        "contractId": 18,
-        "title": "Moving musical instruments",
-        "price": 260,
-        "volume": 210,
-        "fragile": true,
-        "coolingRequired": false,
-        "rideAlong": true,
-        "manPower": 2,
-        "contractDescription": "Guitars, keyboard and speakers included.",
-        "moveDateTime": "2024-06-09T09:30:00",
-        "contractStatus": "COMPLETED",
-        "creationDateTime": "2024-04-14T15:30:00",
-        "requesterId": 1743627291888,
-        "fromLocation": {
-          "city": "Bulle",
-          "post": 1630,
-          "street": "Rue de la Gare 12",
-          "latitude": 46.6161,
-          "longitude": 7.0535
-        },
-        "toLocation": {
-          "city": "Vevey",
-          "post": 1800,
-          "street": "Avenue Nestlé 5",
-          "latitude": 46.4644,
-          "longitude": 6.8431
-        }
-      },
-      {
-        "contractId": 19,
-        "title": "Art delivery for exhibition",
-        "price": 600,
-        "volume": 220,
-        "fragile": true,
-        "coolingRequired": false,
-        "rideAlong": true,
-        "manPower": 2,
-        "contractDescription": "Paintings and sculptures, handle with care.",
-        "moveDateTime": "2024-06-10T10:00:00",
-        "contractStatus": "FINALIZED",
-        "creationDateTime": "2024-04-14T16:00:00",
-        "requesterId": 1743627291889,
-        "fromLocation": {
-          "city": "Lugano",
-          "post": 6900,
-          "street": "Via Cattedrale 9",
-          "latitude": 46.0056,
-          "longitude": 8.9542
-        },
-        "toLocation": {
-          "city": "Locarno",
-          "post": 6600,
-          "street": "Via della Stazione 3",
-          "latitude": 46.1706,
-          "longitude": 8.7995
-        }
-      },
-      {
-        "contractId": 20,
-        "title": "Old furniture to recycling center",
-        "price": 75,
-        "volume": 140,
-        "fragile": false,
-        "coolingRequired": false,
-        "rideAlong": false,
-        "manPower": 1,
-        "contractDescription": "Transporting an old sofa and broken shelves.",
-        "moveDateTime": "2024-06-11T13:00:00",
-        "contractStatus": "FINALIZED",
-        "creationDateTime": "2024-04-14T16:30:00",
-        "requesterId": 1743627291890,
-        "fromLocation": {
-          "city": "Dietikon",
-          "post": 8953,
-          "street": "Schönenwerdstrasse 10",
-          "latitude": 47.4079,
-          "longitude": 8.4006
-        },
-        "toLocation": {
-          "city": "Zürich",
-          "post": 8048,
-          "street": "Rautistrasse 33",
-          "latitude": 47.3829,
-          "longitude": 8.4866
-        }
+      "toLocation": {
+        "city": "Martigny",
+        "post": 1920,
+        "street": "Place Centrale 4",
+        "latitude": 46.1035,
+        "longitude": 7.0729
       }
-    
+    },
+    {
+      "contractId": 12,
+      "title": "Mini bar relocation",
+      "price": 150,
+      "volume": 90,
+      "fragile": false,
+      "coolingRequired": true,
+      "rideAlong": false,
+      "manPower": 2,
+      "contractDescription": "Moving a mini bar with drink cooling.",
+      "moveDateTime": "2024-06-03T15:30:00",
+      "contractStatus": "REQUESTED",
+      "creationDateTime": "2024-04-14T10:30:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Yverdon-les-Bains",
+        "post": 1400,
+        "street": "Rue du Lac 7",
+        "latitude": 46.7785,
+        "longitude": 6.6416
+      },
+      "toLocation": {
+        "city": "La Chaux-de-Fonds",
+        "post": 2300,
+        "street": "Avenue Léopold-Robert 20",
+        "latitude": 47.0999,
+        "longitude": 6.8259
+      }
+    },
+    {
+      "contractId": 13,
+      "title": "Moving photo studio gear",
+      "price": 350,
+      "volume": 250,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 2,
+      "contractDescription": "Studio lights and backdrops need careful handling.",
+      "moveDateTime": "2024-06-04T14:00:00",
+      "contractStatus": "OFFERED",
+      "creationDateTime": "2024-04-14T11:00:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Zürich",
+        "post": 8057,
+        "street": "Rosengartenstrasse 45",
+        "latitude": 47.3997,
+        "longitude": 8.5173
+      },
+      "toLocation": {
+        "city": "Rapperswil",
+        "post": 8640,
+        "street": "Seestrasse 13",
+        "latitude": 47.2264,
+        "longitude": 8.8182
+      }
+    },
+    {
+      "contractId": 14,
+      "title": "Delivery of conference materials",
+      "price": 280,
+      "volume": 180,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 1,
+      "contractDescription": "Boxes with folders, pens and name tags.",
+      "moveDateTime": "2024-06-05T10:00:00",
+      "contractStatus": "OFFERED",
+      "creationDateTime": "2024-04-14T12:15:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Baden",
+        "post": 5400,
+        "street": "Haselstrasse 11",
+        "latitude": 47.4724,
+        "longitude": 8.3076
+      },
+      "toLocation": {
+        "city": "Aarau",
+        "post": 5000,
+        "street": "Kasernenstrasse 19",
+        "latitude": 47.3903,
+        "longitude": 8.0452
+      }
+    },
+    {
+      "contractId": 15,
+      "title": "Moving household items",
+      "price": 420,
+      "volume": 380,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 3,
+      "contractDescription": "Beds, lamps, fragile glassware included.",
+      "moveDateTime": "2024-06-06T08:30:00",
+      "contractStatus": "ACCEPTED",
+      "creationDateTime": "2024-04-14T13:20:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Uster",
+        "post": 8610,
+        "street": "Brunnenstrasse 8",
+        "latitude": 47.3476,
+        "longitude": 8.7203
+      },
+      "toLocation": {
+        "city": "Wetzikon",
+        "post": 8620,
+        "street": "Gartenstrasse 3",
+        "latitude": 47.3267,
+        "longitude": 8.7922
+      }
+    },
+    {
+      "contractId": 16,
+      "title": "Transporting a washing machine",
+      "price": 170,
+      "volume": 200,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 2,
+      "contractDescription": "Heavy appliance needs loading help.",
+      "moveDateTime": "2024-06-07T13:00:00",
+      "contractStatus": "ACCEPTED",
+      "creationDateTime": "2024-04-14T14:00:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Kloten",
+        "post": 8302,
+        "street": "Flughafenstrasse 2",
+        "latitude": 47.4515,
+        "longitude": 8.5617
+      },
+      "toLocation": {
+        "city": "Opfikon",
+        "post": 8152,
+        "street": "Industriestrasse 11",
+        "latitude": 47.4324,
+        "longitude": 8.5709
+      }
+    },
+    {
+      "contractId": 17,
+      "title": "Transport of garden tools",
+      "price": 95,
+      "volume": 100,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 1,
+      "contractDescription": "Shovels, hedge trimmers and a lawnmower.",
+      "moveDateTime": "2024-06-08T11:00:00",
+      "contractStatus": "COMPLETED",
+      "creationDateTime": "2024-04-14T15:00:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Langenthal",
+        "post": 4900,
+        "street": "Werkhofstrasse 6",
+        "latitude": 47.2137,
+        "longitude": 7.7904
+      },
+      "toLocation": {
+        "city": "Burgdorf",
+        "post": 3400,
+        "street": "Bahnhofstrasse 8",
+        "latitude": 47.0597,
+        "longitude": 7.6231
+      }
+    },
+    {
+      "contractId": 18,
+      "title": "Moving musical instruments",
+      "price": 260,
+      "volume": 210,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 2,
+      "contractDescription": "Guitars, keyboard and speakers included.",
+      "moveDateTime": "2024-06-09T09:30:00",
+      "contractStatus": "COMPLETED",
+      "creationDateTime": "2024-04-14T15:30:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Bulle",
+        "post": 1630,
+        "street": "Rue de la Gare 12",
+        "latitude": 46.6161,
+        "longitude": 7.0535
+      },
+      "toLocation": {
+        "city": "Vevey",
+        "post": 1800,
+        "street": "Avenue Nestlé 5",
+        "latitude": 46.4644,
+        "longitude": 6.8431
+      }
+    },
+    {
+      "contractId": 19,
+      "title": "Art delivery for exhibition",
+      "price": 600,
+      "volume": 220,
+      "fragile": true,
+      "coolingRequired": false,
+      "rideAlong": true,
+      "manPower": 2,
+      "contractDescription": "Paintings and sculptures, handle with care.",
+      "moveDateTime": "2024-06-10T10:00:00",
+      "contractStatus": "FINALIZED",
+      "creationDateTime": "2024-04-14T16:00:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Lugano",
+        "post": 6900,
+        "street": "Via Cattedrale 9",
+        "latitude": 46.0056,
+        "longitude": 8.9542
+      },
+      "toLocation": {
+        "city": "Locarno",
+        "post": 6600,
+        "street": "Via della Stazione 3",
+        "latitude": 46.1706,
+        "longitude": 8.7995
+      }
+    },
+    {
+      "contractId": 20,
+      "title": "Old furniture to recycling center",
+      "price": 75,
+      "volume": 140,
+      "fragile": false,
+      "coolingRequired": false,
+      "rideAlong": false,
+      "manPower": 1,
+      "contractDescription": "Transporting an old sofa and broken shelves.",
+      "moveDateTime": "2024-06-11T13:00:00",
+      "contractStatus": "FINALIZED",
+      "creationDateTime": "2024-04-14T16:30:00",
+      "requesterId": 1743191531466,
+      "fromLocation": {
+        "city": "Dietikon",
+        "post": 8953,
+        "street": "Schönenwerdstrasse 10",
+        "latitude": 47.4079,
+        "longitude": 8.4006
+      },
+      "toLocation": {
+        "city": "Zürich",
+        "post": 8048,
+        "street": "Rautistrasse 33",
+        "latitude": 47.3829,
+        "longitude": 8.4866
+      }
+    }
+  ],
+  "offers": [
+    {
+      "offerId": 1,
+      "contractId": 1,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 203,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 2,
+      "contractId": 1,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 210,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 3,
+      "contractId": 2,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 250,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 4,
+      "contractId": 2,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 260,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 5,
+      "contractId": 3,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 95,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 6,
+      "contractId": 3,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 100,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 7,
+      "contractId": 4,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 320,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 8,
+      "contractId": 4,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 330,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 9,
+      "contractId": 5,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 270,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 10,
+      "contractId": 5,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 280,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 11,
+      "contractId": 6,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 420,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 12,
+      "contractId": 6,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 430,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 13,
+      "contractId": 7,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 140,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 14,
+      "contractId": 7,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 150,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 15,
+      "contractId": 8,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 520,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 16,
+      "contractId": 8,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 530,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 17,
+      "contractId": 9,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 170,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 18,
+      "contractId": 9,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 180,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 19,
+      "contractId": 10,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 110,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 20,
+      "contractId": 10,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 120,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 21,
+      "contractId": 11,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 115,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 22,
+      "contractId": 11,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 120,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 23,
+      "contractId": 12,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 160,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 24,
+      "contractId": 12,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 165,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 25,
+      "contractId": 13,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 360,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 26,
+      "contractId": 13,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 370,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 27,
+      "contractId": 14,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 290,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 28,
+      "contractId": 14,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 300,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 29,
+      "contractId": 15,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 430,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 30,
+      "contractId": 15,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 440,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 31,
+      "contractId": 16,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 180,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 32,
+      "contractId": 16,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 190,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 33,
+      "contractId": 17,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 100,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 34,
+      "contractId": 17,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 105,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 35,
+      "contractId": 18,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 270,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 36,
+      "contractId": 18,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 280,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 37,
+      "contractId": 19,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 610,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 38,
+      "contractId": 19,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 620,
+      "averageRating": 4.2
+    },
+    {
+      "offerId": 39,
+      "contractId": 20,
+      "driverId": 1743188853181,
+      "driverName": "Driver1",
+      "price": 80,
+      "averageRating": 4.5
+    },
+    {
+      "offerId": 40,
+      "contractId": 20,
+      "driverId": 1743196944172,
+      "driverName": "TheMaster",
+      "price": 85,
+      "averageRating": 4.2
+    }
   ]
 }

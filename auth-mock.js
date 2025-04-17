@@ -126,7 +126,7 @@ app.get("/api/v1/users/:id", (req, res) => {
   const token = jwt.sign({ id: user.id, username: user.username }, SECRET, {
     expiresIn: `${tokenTiming}m`,
   });
-
+  console.log("User found:", user);
   setTimeout(() => {
     res.status(200).json({
       user,
@@ -273,6 +273,157 @@ app.post("/api/v1/contracts", (req, res) => {
   }
   console.log("Returned contracts:", contracts);
   res.json({ contracts });
+});
+
+// Get proposals based on location
+app.get("/api/v1/map/contracts", (req, res) => {
+  const db = readDB();
+  const { lat, lng, filters } = req.query;
+
+  console.log("Received request for proposals:", req.query);
+
+  if (!db.proposals) {
+    console.error("Proposals array is missing from database");
+    return res.status(500).json({ message: "Internal server error: No proposals data" });
+  }
+
+  // Parse latitude and longitude
+  const latitude = parseFloat(lat);
+  const longitude = parseFloat(lng);
+
+  let proposals = db.proposals;
+
+  if (filters) {
+    const parsedFilters = JSON.parse(filters);
+    proposals = proposals.filter((proposal) => {
+      let matches = true;
+
+      if (parsedFilters.radius !== undefined) {
+        const R = 6371; // Radius of the Earth in kilometers
+        const dLat = (proposal.fromLocation.latitude - latitude) * (Math.PI / 180);
+        const dLng = (proposal.fromLocation.longitude - longitude) * (Math.PI / 180);
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(latitude * (Math.PI / 180)) * Math.cos(proposal.fromLocation.latitude * (Math.PI / 180)) *
+                  Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distance = R * c; // Distance in kilometers
+        matches = matches && distance <= parsedFilters.radius;
+      }
+
+      if (parsedFilters.price !== undefined) {
+        matches = matches && proposal.price <= parsedFilters.price;
+      }
+
+      if (parsedFilters.weight !== undefined) {
+        matches = matches && proposal.mass <= parsedFilters.weight;
+      }
+
+      if (parsedFilters.volume !== undefined) {
+        matches = matches && proposal.volume <= parsedFilters.volume;
+      }
+
+      if (parsedFilters.requiredPeople !== undefined) {
+        matches = matches && proposal.manPower >= parsedFilters.requiredPeople;
+      }
+
+      if (parsedFilters.fragile !== undefined) {
+        matches = matches && proposal.fragile === parsedFilters.fragile;
+      }
+
+      if (parsedFilters.coolingRequired !== undefined) {
+        matches = matches && proposal.coolingRequired === parsedFilters.coolingRequired;
+      }
+
+      if (parsedFilters.rideAlong !== undefined) {
+        matches = matches && proposal.rideAlong === parsedFilters.rideAlong;
+      }
+
+      if (parsedFilters.fromAddress !== undefined) {
+        const [fromLat, fromLng] = parsedFilters.fromAddress.split(",");
+        matches = matches && proposal.fromLocation.latitude === parseFloat(fromLat) &&
+                  proposal.fromLocation.longitude === parseFloat(fromLng);
+      }
+
+      if (parsedFilters.toAddress !== undefined) {
+        const [toLat, toLng] = parsedFilters.toAddress.split(",");
+        matches = matches && proposal.toLocation.latitude === parseFloat(toLat) &&
+                  proposal.toLocation.longitude === parseFloat(toLng);
+      }
+
+      if (parsedFilters.moveDateTime !== undefined) {
+        matches = matches && proposal.moveDateTime === parsedFilters.moveDateTime;
+      }
+
+      return matches;
+    });
+  }
+
+  console.log("Returned proposals:", proposals);
+  res.json(proposals);
+});
+
+// Get contracts for a specific user with optional status filtering
+app.get("/api/v1/users/:userId/contracts", (req, res) => {
+  const db = readDB();
+  const userId = parseInt(req.params.userId);
+  const { status } = req.query;
+
+  console.log(`Fetching contracts for user ID: ${userId}, with status: ${status || "any"}`);
+
+  if (!db.proposals) {
+    console.error("Proposals array is missing from the database");
+    return res.status(500).json({ message: "Internal server error: No proposals data" });
+  }
+
+  // Filter proposals by userId and optional status
+  const userContracts = db.proposals.filter((proposal) => {
+    const isUserMatch = proposal.requesterId === userId;
+    return isUserMatch;;
+  });
+
+  console.log(`Found ${userContracts.length} contracts for user ID: ${userId}`);
+  res.status(200).json(userContracts);
+});
+
+// Get offers for a specific contract
+app.get("/api/v1/contracts/:id/offers", (req, res) => {
+  const db = readDB();
+  const contractId = parseInt(req.params.id);
+
+  console.log(`Fetching offers for contract ID: ${contractId}`);
+
+  if (!db.offers) {
+    console.error("Offers array is missing from the database");
+    return res.status(500).json({ message: "Internal server error: No offers data" });
+  }
+
+  // Filter offers by contractId
+  const contractOffers = db.offers.filter((offer) => offer.contractId === contractId);
+
+  if (contractOffers.length === 0) {
+    console.log(`No offers found for contract ID: ${contractId}`);
+    return res.status(404).json({ message: "No offers found for this contract" });
+  }
+
+  console.log(`Found ${contractOffers.length} offers for contract ID: ${contractId}`);
+  res.status(200).json(contractOffers);
+});
+
+// Get driver details by ID
+app.get("/api/v1/users/drivers/:id", (req, res) => {
+  const db = readDB();
+  const driverId = parseInt(req.params.id);
+
+  console.log(`Fetching driver details for ID: ${driverId}`);
+
+  const driver = db.users.find((user) => user.id === driverId && user.accountType === "driver");
+
+  if (!driver) {
+    console.error(`Driver not found for ID: ${driverId}`);
+    return res.status(404).json({ message: "Driver not found" });
+  }
+  console.log(`Found driver details for ID: ${driverId}`);
+  res.status(200).json(driver);
 });
 
 app.listen(PORT, () => {
